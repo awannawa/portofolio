@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="geo.country" content="ID" />
+    <meta name="geo.placename" content="Indonesia" />
+
+    <!-- Primary Meta Tags -->
+    <link rel="icon" href="img/fav.png" />
+    <title>Portfolio Ahmad Rizqi Kurniawan</title>
+    <meta name="title" content="Ahmad Rizqi Kurniawan - Portfolio" />
+    <meta
+      name="description"
+      content="This site is designed for Ahmad Rizqi Kurniawan's CV and Portfolios"
+    />
+
+    <!-- PRELOADS -->
+    <script
+      src="https://kit.fontawesome.com/bf407ca414.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- CSS -->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <!-- Font Awesome CSS dll -->
+    <link
+      rel="stylesheet"
+      href="css/style.css"
+      as="style"
+      media="all"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <link rel="stylesheet" type="text/css" href="css/aos.css" />
+    <!-- END OF CSS -->
+
+    <style>
+      html,
+      body {
+        background-color: none;
+      }
+
+      .lazyload,
+      .main-container {
+        display: none;
+      }
+    </style>
+
+    <!-- end -->
+  </head>
+
+  <body data-target="#page-top" data-spy="scroll">
+    <header>
+      <!--Header content -->
+      <h1 class="lazyload">Hi, Ini Website Awannawa</h1>
+    </header>
+
+    <main class="main-container">
+      <!-- Main Content -->
+      <p>Halaman ini berisikan portfolio Ahmad Rizqi Kurniawan.</p>
+    </main>
+    <!-- End Pre loader page-->
+
+    <!-- navbar -->
+    <nav id="nav" class="navbar navbar-expand-md bg-secondary fixed-top"></nav>
+    <!-- end of navbar -->
+
+    <!-- TOP -->
+    <div id="page-top"></div>
+    <!-- end of top -->
+
+    <!-- Tentang -->
+    <section id="tentang"></section>
+    <!-- End Tentang -->
+
+    <!-- Resume -->
+    <section id="skill" style="overflow: hidden"></section>
+    <!-- End Resume -->
+
+    <!-- Portfolio -->
+    <section id="portfolio"></section>
+    <!--  End Portfolio  -->
+
+    <!-- bagin halaman -->
+    <section id="mySosMed" class="mySosMed"></section>
+
+    <!-- footer -->
+    <section id="footer"></section>
+    <!-- end footer -->
+
+    <!-- Optional JQ -> plugin -> framework -> custome harus sesuai urutan biar jalannnnnnnn-->
+    <script>
+      $(document).ready(function () {
+        const sections = [
+          { id: "#nav", url: "./models/navbar/index.html" },
+          { id: "#page-top", url: "/pages/biodatasingkat/index.html" },
+          { id: "#tentang", url: "/pages/education/index.html" },
+          { id: "#skill", url: "/pages/skill/index.html" },
+          { id: "#portfolio", url: "/pages/portfolio/index.html" },
+          { id: "#mySosMed", url: "/pages/sosmed/index.html" },
+          { id: "#footer", url: "/pages/footer/index.html" },
+        ];
+
+        sections.forEach((section) => {
+          $(section.id).load(section.url, function () {
+            updateImages(); // Call function after content is loaded
+          });
+        });
+      });
+    </script>
+
+    <script type="text/javascript" src="js/jquery.easing.1.3.min.js"></script>
+    <script type="text/javascript" src="js/jquery.filterizr.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1200,
+      });
+    </script>
+    <script type="text/javascript" src="js/awan.js"></script>
+  </body>
+</html>
