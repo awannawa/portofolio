@@ -1,10 +1,11 @@
 .jumbotron {
-  /* background-image: url(../img/intro-bg3.png); */
   background-image: url("https://drive.google.com/thumbnail?id=1xn7j0B_AsTYf6icw6haFGSaVwbKdWhsu&sz=s4000");
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  padding-top: 20px;
+  padding-bottom: 20px;
   margin-bottom: 0px;
 }
 
@@ -20,7 +21,7 @@
 /* starter tamplate */
 .starter-template {
   text-align: center;
-  padding: 0px 0;
+  padding: 10px 0;
 }
 
 /* dari sini */
@@ -695,4 +696,17 @@ a:focus,
   transform: rotate(-45deg);
   top: 21px;
   left: 8px;
+}
+
+.nav-link {
+  color: rgb(197, 197, 197) !important;
+}
+.nav-link:hover {
+  color: white !important;
+}
+.navbar-collapse {
+  flex-grow: 0 !important;
+}
+.nav-item .dropdown-item {
+  text-align: right;
 }
