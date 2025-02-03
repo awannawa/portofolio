@@ -200,8 +200,10 @@
 #skill .btn-primary {
   background-color: #a9a9a9;
 }
-#skill .btn {
+#skill .btn,
+#skill .btn-info {
   outline: none;
+  border-color: transparent;
 }
 .card {
   box-shadow: 2px 5px 20px #777;
