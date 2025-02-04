@@ -1,3 +1,13 @@
+html,
+body {
+  background-color: none;
+}
+
+.lazyload,
+.main-container {
+  display: none;
+}
+
 .jumbotron {
   background-image: url("https://drive.google.com/thumbnail?id=1xn7j0B_AsTYf6icw6haFGSaVwbKdWhsu&sz=s4000");
   background-attachment: fixed;
@@ -13,7 +23,10 @@
 .navbar .navbar-collapse {
   text-align: right;
 }
-
+.navbar-toggler {
+  border: none !important;
+  outline: none !important;
+}
 .active {
   border-bottom: 2px solid #fff;
 }
@@ -286,112 +299,6 @@
   background-color: #6c757d;
   padding: 5px 10px;
   border-radius: 5px;
-}
-
-/* Contact Section */
-#contact {
-  padding: 50px 0 60px 0;
-  background-color: #ededed;
-}
-#contact h3 {
-  padding-top: 20px;
-  font-size: 20px;
-  font-weight: 400;
-  color: #fff;
-}
-#g-recaptcha-response {
-  display: block !important;
-  position: absolute;
-  margin: -78px 0 0 0 !important;
-  width: 302px !important;
-  height: 76px !important;
-  z-index: -999999;
-  opacity: 0;
-}
-#contact .g-recaptcha {
-  padding-bottom: 10px;
-}
-#contact .btn:focus,
-.btn:active {
-  box-shadow: 0 0 0 0.2rem rgba(211, 211, 211);
-}
-#contact .text-danger {
-  color: #e87e04;
-  text-align: left;
-}
-label {
-  font-size: 12px;
-  font-weight: 400;
-  font-family: "Open Sans", sans-serif;
-  float: left;
-}
-#contact .form-control {
-  display: block;
-  width: 100%;
-  padding: 6px 12px;
-  font-size: 14px;
-  line-height: 1.42857143;
-  color: #2c3e50;
-  background-color: rgba(255, 255, 255, 0.8);
-  background-image: none;
-  border: 1px solid #999;
-  border-radius: 0;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  -webkit-transition: none;
-  -o-transition: none;
-  transition: none;
-}
-
-#contact .font {
-  font-size: 18px;
-  text-align: center;
-}
-
-#contact .name-input {
-  background-image: url(../img/name-input.png);
-  background-size: 25px;
-  background-repeat: no-repeat;
-  background-position: 3px 5px;
-  padding-left: 35px;
-}
-
-#contact .email-input {
-  background-image: url(../img/email-input.png);
-  background-size: 25px;
-  background-repeat: no-repeat;
-  background-position: 3px 5px;
-  padding-left: 35px;
-}
-
-#contact .phone-input {
-  background-image: url(../img/phone-input.png);
-  background-size: 25px;
-  background-repeat: no-repeat;
-  background-position: 3px 5px;
-  padding-left: 35px;
-}
-
-#contact .form-control:focus {
-  border-color: inherit;
-  outline: 0;
-  -webkit-box-shadow: transparent;
-  box-shadow: transparent;
-}
-.form-control::-webkit-input-placeholder {
-  color: #2c3e50;
-}
-.form-control:-moz-placeholder {
-  color: #2c3e50;
-}
-.form-control:-moz-placeholder {
-  color: #2c3e50;
-}
-.form-control:-ms-input-placeholder {
-  color: #2c3e50;
-}
-#contact .btn-primary {
-  background-color: #a9a9a9;
 }
 
 #footer .social ul li {

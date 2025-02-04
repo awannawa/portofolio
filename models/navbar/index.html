@@ -1,25 +1,23 @@
 <head>
-  <!-- CSS -->
+  <!-- Default base URL untuk localhost -->
+  <base href="/" />
+  <!-- Base URL untuk hosting github -->
+  <script>
+    if (window.location.hostname === "awannawa.github.io") {
+      document.querySelector("base").setAttribute("href", "/portofolio/");
+    }
+  </script>
   <!-- Bootstrap CSS -->
   <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
     rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+    href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha512-tDXPcamuZsWWd6OsKFyH6nAqh/MjZ/5Yk88T5o+aMfygqNFPan1pLyPFAndRzmOWHKT+jSDzWpJv8krj6x1LMA=="
     crossorigin="anonymous"
+    referrerpolicy="no-referrer"
   />
   <!-- Font Awesome CSS dll -->
-  <link
-    rel="stylesheet"
-    href="https://awannawa.github.io/portofolio/css/style.css"
-    as="style"
-    media="all"
-    onload="this.onload=null;this.rel='stylesheet'"
-  />
-  <link
-    rel="stylesheet"
-    type="text/css"
-    href="https://awannawa.github.io/portofolio/css/aos.css"
-  />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link rel="stylesheet" type="text/css" href="css/aos.css" />
   <!-- END OF CSS -->
 </head>
 
@@ -116,13 +114,10 @@
 </body>
 
 <script
-  src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-v4-rtl/4.3.1-0/js/bootstrap.min.js"
-  integrity="sha512-OUTo0k3tQaY48oUR7082t08hnB63qZ/LmOOUma44cJ8zVFEd/1fpsQQtKOErwbQvUzRiTg1RIxKChJ/yV2Cs7A=="
+  src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"
+  integrity="sha512-Ah5hWYPzDsVHf9i2EejFBFrG2ZAPmpu4ZJtW4MfSgpZacn+M9QHDt+Hd/wL1tEkk1UgbzqepJr6KnhZjFKB+0A=="
   crossorigin="anonymous"
   referrerpolicy="no-referrer"
 ></script>
 
-<script
-  type="text/javascript"
-  src="https://awannawa.github.io/portofolio/js/awan.js"
-></script>
+<script type="text/javascript" src="js/awan.js"></script>

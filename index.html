@@ -22,39 +22,36 @@
     />
 
     <!-- PRELOADS -->
-    <script
-      src="https://kit.fontawesome.com/bf407ca414.js"
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
       crossorigin="anonymous"
-    ></script>
+      referrerpolicy="no-referrer"
+    />
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-
     <link rel="stylesheet" type="text/css" href="css/aos.css" />
     <!-- END OF CSS -->
 
-    <style>
-      html,
-      body {
-        background-color: none;
+    <!-- Default base URL untuk localhost -->
+    <base href="/" />
+    <!-- Base URL untuk hosting github -->
+    <script>
+      if (window.location.hostname === "awannawa.github.io") {
+        document.querySelector("base").setAttribute("href", "/portofolio/");
       }
-
-      .lazyload,
-      .main-container {
-        display: none;
-      }
-    </style>
-
-    <!-- end -->
+    </script>
   </head>
 
   <body data-target="#page-top" data-spy="scroll">
+    <!-- Pre loader page-->
     <header>
       <!--Header content -->
       <h1 class="lazyload">Hi, Ini Website Awannawa</h1>
     </header>
-
     <main class="main-container">
       <!-- Main Content -->
       <p>Halaman ini berisikan portfolio Ahmad Rizqi Kurniawan.</p>
@@ -63,42 +60,35 @@
 
     <!-- navbar -->
     <nav id="nav" class="navbar navbar-expand-md bg-secondary fixed-top"></nav>
-    <!-- end of navbar -->
 
     <!-- TOP -->
     <div id="page-top"></div>
-    <!-- end of top -->
 
     <!-- Tentang -->
     <section id="tentang"></section>
-    <!-- End Tentang -->
 
     <!-- Resume -->
     <section id="skill" style="overflow: hidden"></section>
-    <!-- End Resume -->
 
     <!-- Portfolio -->
     <section id="portfolio"></section>
-    <!--  End Portfolio  -->
 
     <!-- bagin halaman -->
     <section id="mySosMed" class="mySosMed"></section>
 
     <!-- footer -->
     <section id="footer"></section>
-    <!-- end footer -->
 
-    <!-- Optional JQ -> plugin -> framework -> custome harus sesuai urutan biar jalannnnnnnn-->
     <script>
       $(document).ready(function () {
         const sections = [
-          { id: "#nav", url: "./models/navbar/index.html" },
-          { id: "#page-top", url: "./pages/biodatasingkat/index.html" },
-          { id: "#tentang", url: "./pages/education/index.html" },
-          { id: "#skill", url: "./pages/skill/index.html" },
-          { id: "#portfolio", url: "./pages/portfolio/index.html" },
-          { id: "#mySosMed", url: "./pages/sosmed/index.html" },
-          { id: "#footer", url: "./pages/footer/index.html" },
+          { id: "#nav", url: "models/navbar/index.html" },
+          { id: "#page-top", url: "pages/biodatasingkat/index.html" },
+          { id: "#tentang", url: "pages/education/index.html" },
+          { id: "#skill", url: "pages/skill/index.html" },
+          { id: "#portfolio", url: "pages/portfolio/index.html" },
+          { id: "#mySosMed", url: "pages/sosmed/index.html" },
+          { id: "#footer", url: "pages/footer/index.html" },
         ];
 
         sections.forEach((section) => {
