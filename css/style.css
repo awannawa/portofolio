@@ -409,6 +409,9 @@ a:focus,
     width: 100%;
     text-decoration: none;
   }
+  .filtr-container {
+    margin: 0 !important;
+  }
 }
 
 /* footer */
