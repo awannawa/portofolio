@@ -103,6 +103,22 @@
     </script>
     <script>
       $(document).ready(function () {
+        $("#skill").load("pages/skill/index.html", function () {
+          updateImages();
+        });
+      });
+    </script>
+
+    <script>
+      $(document).ready(function () {
+        $("#mySosMed").load("pages/sosmed/index.html", function () {
+          updateImages();
+        });
+      });
+    </script>
+
+    <script>
+      $(document).ready(function () {
         $("#footer").load("pages/footer/index.html", function () {
           updateImages();
         });
