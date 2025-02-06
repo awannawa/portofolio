@@ -22,25 +22,6 @@
     />
 
     <!-- PRELOADS -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
-      integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30WpbsGTqbIiAwxTsbe76DErLq5EDQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-
-    <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link rel="stylesheet" type="text/css" href="css/aos.css" />
-    <!-- END OF CSS -->
-
     <!-- Default base URL untuk localhost -->
     <base href="/" />
     <!-- Base URL untuk hosting github -->
@@ -49,28 +30,37 @@
         document.querySelector("base").setAttribute("href", "/portofolio/");
       }
     </script>
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha512-tDXPcamuZsWWd6OsKFyH6nAqh/MjZ/5Yk88T5o+aMfygqNFPan1pLyPFAndRzmOWHKT+jSDzWpJv8krj6x1LMA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" type="text/css" href="css/lightbox.css" />
+    <link rel="stylesheet" type="text/css" href="css/aos.css" />
+    <!-- END OF CSS -->
   </head>
 
   <body data-target="#page-top" data-spy="scroll">
-    <!-- Pre loader page-->
-    <header>
-      <!--Header content -->
-      <h1 class="lazyload">Hi, Ini Website Awannawa</h1>
-    </header>
-    <main class="main-container">
-      <!-- Main Content -->
-      <p>Halaman ini berisikan portfolio Ahmad Rizqi Kurniawan.</p>
-    </main>
-    <!-- End Pre loader page-->
-
     <!-- navbar -->
     <nav id="nav" class="navbar navbar-expand-md bg-secondary fixed-top"></nav>
 
     <!-- TOP -->
     <div id="page-top"></div>
 
-    <!-- Tentang -->
-    <section id="tentang"></section>
+    <!-- Education -->
+    <section id="education"></section>
 
     <!-- Resume -->
     <section id="skill" style="overflow: hidden"></section>
@@ -84,41 +74,59 @@
     <!-- footer -->
     <section id="footer"></section>
 
+    <!-- Optional JQ -> plugin -> framework -> custome harus sesuai urutan biar jalannnnnnnn-->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+      integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30WpbsGTqbIiAwxTsbe76DErLq5EDQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script>
       $(document).ready(function () {
-        const sections = [
-          { id: "#nav", url: "models/navbar/index.html" },
-          { id: "#page-top", url: "pages/biodatasingkat/index.html" },
-          { id: "#tentang", url: "pages/education/index.html" },
-          { id: "#skill", url: "pages/skill/index.html" },
-          { id: "#portfolio", url: "pages/portfolio/index.html" },
-          { id: "#mySosMed", url: "pages/sosmed/index.html" },
-          { id: "#footer", url: "pages/footer/index.html" },
-        ];
-
-        sections.forEach((section) => {
-          $(section.id).load(section.url, function () {
-            updateImages(); // Call function after content is loaded
-          });
-        });
+        $("#nav").load("models/navbar/index.html");
       });
     </script>
 
-    <!-- Optional JQ -> plugin -> framework -> custome harus sesuai urutan biar jalannnnnnnn-->
-
+    <script>
+      $(document).ready(function () {
+        $("#page-top").load("pages/biodatasingkat/index.html", function () {
+          updateImages();
+        });
+      });
+    </script>
+    <script>
+      $(document).ready(function () {
+        $("#education").load("pages/education/index.html", function () {
+          updateImages();
+        });
+      });
+    </script>
+    <script>
+      $(document).ready(function () {
+        $("#footer").load("pages/footer/index.html", function () {
+          updateImages();
+        });
+      });
+    </script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"
       integrity="sha512-ahmSZKApTDNd3gVuqL5TQ3MBTj8tL5p2tYV05Xxzcfu6/ecvt1A0j6tfudSGBVuteSoTRMqMljbfdU0g2eDNUA=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-
+    <script type="text/javascript" src="js/jquery.filterizr.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha512-Ah5hWYPzDsVHf9i2EejFBFrG2ZAPmpu4ZJtW4MfSgpZacn+M9QHDt+Hd/wL1tEkk1UgbzqepJr6KnhZjFKB+0A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script type="text/javascript" src="js/awan.js"></script>
     <script type="text/javascript" src="js/aos.js"></script>
     <script>
       AOS.init({
         duration: 1200,
       });
     </script>
-    <script type="text/javascript" src="js/awan.js"></script>
   </body>
 </html>

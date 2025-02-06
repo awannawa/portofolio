@@ -1,123 +1,86 @@
-<head>
-  <!-- Default base URL untuk localhost -->
-  <base href="/" />
-  <!-- Base URL untuk hosting github -->
-  <script>
-    if (window.location.hostname === "awannawa.github.io") {
-      document.querySelector("base").setAttribute("href", "/portofolio/");
-    }
-  </script>
-  <!-- Bootstrap CSS -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha512-tDXPcamuZsWWd6OsKFyH6nAqh/MjZ/5Yk88T5o+aMfygqNFPan1pLyPFAndRzmOWHKT+jSDzWpJv8krj6x1LMA=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
-  <!-- Font Awesome CSS dll -->
-  <link rel="stylesheet" type="text/css" href="css/style.css" />
-  <link rel="stylesheet" type="text/css" href="css/aos.css" />
-  <!-- END OF CSS -->
-</head>
-
-<body>
-  <div class="container">
-    <a class="navbar-brand page-scroll" href="#page-top">
-      <img
-        class="gdrive-image"
-        idLink="1ECflWRipz4jTnLvSbfe7cKwYcqQAZj_1"
-        width="200"
-        height="30"
-        class="img-responsive"
-        alt="logo-awan"
-      />
-    </a>
-    <button
-      class="navbar-toggler first-button"
-      type="button"
-      data-toggle="collapse"
-      data-target="#navbarNav"
-      aria-controls="navbarNav"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-      style="box-shadow: none"
-    >
-      <div class="animated-icon1">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link page-scroll" href="#page-top2"
-            ><strong>ABOUT ME</strong></a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link page-scroll" href="#skill"
-            ><strong>SKILL</strong></a
-          >
-        </li>
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            id="navbarDropdownMenuLink"
-            role="button"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            <strong>PORTFOLIO</strong>
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item page-scroll" href="#portfolio">Portfolio</a>
-            <a class="dropdown-item" href="#" target="_blank"
-              >Other Portfolios</a
-            >
-          </div>
-        </li>
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            id="navbarDropdownMenuLink"
-            role="button"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            <strong>CONTACT</strong>
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a
-              class="dropdown-item"
-              href="https://wa.me/6285161601550"
-              target="_blank"
-              >WhatsApp</a
-            >
-            <a
-              class="dropdown-item"
-              href="mailto:ahmadrizqik@gmail.com?Subject=Hello%20Awan%20I`m"
-              target="_top"
-              >Email</a
-            >
-          </div>
-        </li>
-      </ul>
+<div class="container">
+  <a class="navbar-brand page-scroll" href="#page-top">
+    <img
+      class="gdrive-image"
+      idLink="1ECflWRipz4jTnLvSbfe7cKwYcqQAZj_1"
+      width="200"
+      height="30"
+      class="img-responsive"
+      alt="logo-awan"
+    />
+  </a>
+  <button
+    class="navbar-toggler first-button"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNav"
+    aria-controls="navbarNav"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+    style="box-shadow: none"
+  >
+    <div class="animated-icon1">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
+  </button>
+
+  <div id="navbarNav" class="collapse navbar-collapse">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link page-scroll" href="#page-top2"
+          ><strong>ABOUT ME</strong></a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link page-scroll" href="#skill"><strong>SKILL</strong></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="navbarDropdownMenuLink"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          <strong>PORTFOLIO</strong>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item page-scroll" href="#portfolio">Portfolio</a>
+          <a class="dropdown-item" href="#" target="_blank">Other Portfolios</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="navbarDropdownMenuLink"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          <strong>CONTACT</strong>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a
+            class="dropdown-item"
+            href="https://wa.me/6285161601550"
+            target="_blank"
+            >WhatsApp</a
+          >
+          <a
+            class="dropdown-item"
+            href="mailto:ahmadrizqik@gmail.com?Subject=Hello%20Awan%20I`m"
+            target="_top"
+            >Email</a
+          >
+        </div>
+      </li>
+    </ul>
   </div>
-</body>
-
-<script
-  src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"
-  integrity="sha512-Ah5hWYPzDsVHf9i2EejFBFrG2ZAPmpu4ZJtW4MfSgpZacn+M9QHDt+Hd/wL1tEkk1UgbzqepJr6KnhZjFKB+0A=="
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer"
-></script>
-
+</div>
 <script type="text/javascript" src="js/awan.js"></script>
