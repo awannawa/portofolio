@@ -94,6 +94,7 @@
         });
       });
     </script>
+
     <script>
       $(document).ready(function () {
         $("#education").load("pages/education/index.html", function () {
@@ -104,6 +105,14 @@
     <script>
       $(document).ready(function () {
         $("#skill").load("pages/skill/index.html", function () {
+          updateImages();
+        });
+      });
+    </script>
+
+    <script>
+      $(document).ready(function () {
+        $("#portfolio").load("pages/portfolio/index.html", function () {
           updateImages();
         });
       });
@@ -138,6 +147,8 @@
       referrerpolicy="no-referrer"
     ></script>
     <script type="text/javascript" src="js/awan.js"></script>
+
+    <script type="text/javascript" src="js/lightbox.min.js"></script>
     <script type="text/javascript" src="js/aos.js"></script>
     <script>
       AOS.init({
