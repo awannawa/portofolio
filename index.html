@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -22,7 +21,6 @@
     />
 
     <!-- PRELOADS -->
-    <!-- Default base URL untuk localhost -->
     <base href="/" />
     <!-- Base URL untuk hosting github -->
     <script>
@@ -32,7 +30,6 @@
     </script>
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
@@ -48,12 +45,16 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" type="text/css" href="css/lightbox.css" />
-    <link rel="stylesheet" type="text/css" href="css/aos.css" />
-    <!-- END OF CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+      integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
-
   <body data-target="#page-top" data-spy="scroll">
-    <!-- navbar -->
+    <!-- Navbar -->
     <nav id="nav" class="navbar navbar-expand-md bg-secondary fixed-top"></nav>
 
     <!-- TOP -->
@@ -68,13 +69,13 @@
     <!-- Portfolio -->
     <section id="portfolio"></section>
 
-    <!-- bagin halaman -->
+    <!-- Social Media -->
     <section id="mySosMed" class="mySosMed"></section>
 
-    <!-- footer -->
+    <!-- Footer -->
     <section id="footer"></section>
 
-    <!-- Optional JQ -> plugin -> framework -> custome harus sesuai urutan biar jalannnnnnnn-->
+    <!-- Scripts -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
       integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30WpbsGTqbIiAwxTsbe76DErLq5EDQ=="
@@ -84,50 +85,21 @@
     <script>
       $(document).ready(function () {
         $("#nav").load("models/navbar/index.html");
-      });
-    </script>
-
-    <script>
-      $(document).ready(function () {
         $("#page-top").load("pages/biodatasingkat/index.html", function () {
           updateImages();
         });
-      });
-    </script>
-
-    <script>
-      $(document).ready(function () {
         $("#education").load("pages/education/index.html", function () {
           updateImages();
         });
-      });
-    </script>
-    <script>
-      $(document).ready(function () {
         $("#skill").load("pages/skill/index.html", function () {
           updateImages();
         });
-      });
-    </script>
-
-    <script>
-      $(document).ready(function () {
         $("#portfolio").load("pages/portfolio/index.html", function () {
           updateImages();
         });
-      });
-    </script>
-
-    <script>
-      $(document).ready(function () {
         $("#mySosMed").load("pages/sosmed/index.html", function () {
           updateImages();
         });
-      });
-    </script>
-
-    <script>
-      $(document).ready(function () {
         $("#footer").load("pages/footer/index.html", function () {
           updateImages();
         });
@@ -147,13 +119,15 @@
       referrerpolicy="no-referrer"
     ></script>
     <script type="text/javascript" src="js/awan.js"></script>
-
     <script type="text/javascript" src="js/lightbox.min.js"></script>
-    <script type="text/javascript" src="js/aos.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+      integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script>
-      AOS.init({
-        duration: 1200,
-      });
+      AOS.init({ duration: 1200 });
     </script>
   </body>
 </html>
