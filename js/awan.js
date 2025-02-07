@@ -48,10 +48,18 @@ $(".page-scroll").on("click", function (e) {
 });
 /*END smoth scroll*/
 
+//filterizr call
 $(document).ready(function () {
+  // Initialize Filterizr with no filter applied
   var filterizd = $(".filtr-container").filterizr({
-    filter: "satu",
+    filter: "all",
   });
+
+  // Apply 'page1' filter after a short delay to ensure 'all' is active first
+  setTimeout(function () {
+    filterizd.filterizr("filter", "page1");
+  }, 5000);
+
   $(".filterListItem").on("click", function () {
     $(".filterListItem").removeClass("active");
     $(this).addClass("active");
