@@ -37,7 +37,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-
+    <!-- lightGallery CSS -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.8.1/css/lightgallery.min.css"
@@ -45,7 +45,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.8.1/css/lg-zoom.min.css"
@@ -53,6 +52,14 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.8.1/css/lg-video.min.css"
+      integrity="sha512-89gDQOHnYjji90NPJ7+M5tgA/0E+fjL4KuSFhi6tjH6sZ54yUEogPMmOAgbI599fW1CtCyrsJbch8k/QzuoXzw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- end of lightGallery CSS -->
 
     <link
       rel="stylesheet"
@@ -131,6 +138,12 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.8.1/plugins/video/lg-video.min.js"
+      integrity="sha512-rnKIttrtGarsGfM4oUQSn6vIWfYBB1duPFg4rOyxYnC8+AU9BWW5tq+En1uA4Yi1pYtl0xWmFg3Jejsmx3CYQw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <!-- end of lightGallery script -->
 
     <script
@@ -139,6 +152,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    <script type="text/javascript" src="js/jquery.filterizr.min.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"
       integrity="sha512-Ah5hWYPzDsVHf9i2EejFBFrG2ZAPmpu4ZJtW4MfSgpZacn+M9QHDt+Hd/wL1tEkk1UgbzqepJr6KnhZjFKB+0A=="
@@ -163,7 +177,7 @@
             selector: ".gallery-item",
             thumbnail: true,
             zoom: true,
-            plugins: [lgZoom, lgThumbnail], // Make sure the plugins are listed here
+            plugins: [lgZoom, lgThumbnail, lgVideo], // Make sure the plugins are listed here
           });
         });
 
