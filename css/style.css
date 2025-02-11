@@ -412,6 +412,9 @@ a:focus,
   .filtr-container {
     margin: 0 !important;
   }
+  #portfolio {
+    text-align: center;
+  }
 }
 
 /* footer */
