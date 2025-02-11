@@ -80,12 +80,12 @@ function updateImages() {
 // Event listener untuk memanggil fungsi updateImages saat window load
 window.addEventListener("load", updateImages);
 
-//Fungsi untuk lightgallery
-document.addEventListener("DOMContentLoaded", function () {
-  lightGallery(document.getElementById("animated-thumbnails-gallery"), {
-    selector: ".gallery-item",
-    thumbnail: true, // Enable thumbnail support
-    zoom: true, // Enable zoom feature
-    plugins: [lgZoom, lgThumbnail], // Make sure the plugins are listed here
-  });
-});
+// //Fungsi untuk lightgallery
+// document.addEventListener("DOMContentLoaded", function () {
+//   lightGallery(document.getElementById("animated-thumbnails-gallery"), {
+//     selector: ".gallery-item",
+//     thumbnail: true, // Enable thumbnail support
+//     zoom: true, // Enable zoom feature
+//     plugins: [lgZoom, lgThumbnail], // Make sure the plugins are listed here
+//   });
+// });

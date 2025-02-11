@@ -301,6 +301,23 @@ body {
   border-radius: 5px;
 }
 
+/* New Portfolio css */
+#portfolio .jumbotron {
+  text-align: center;
+}
+.lg-thumb-item.active {
+  border-color: green !important;
+}
+.lg-thumb-item:hover {
+  border-color: rgb(251, 255, 0, 0.6) !important;
+}
+@media (max-width: 576px) {
+  #portfolio {
+    text-align: center;
+  }
+}
+/* End of New Portfolio css */
+
 #footer .social ul li {
   display: inline-block;
 }
@@ -411,9 +428,6 @@ a:focus,
   }
   .filtr-container {
     margin: 0 !important;
-  }
-  #portfolio {
-    text-align: center;
   }
 }
 
