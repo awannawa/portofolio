@@ -321,6 +321,9 @@ body {
 #portfolio .row-center {
   text-align: center;
 }
+#portfolio .container {
+  text-align: center;
+}
 @media (max-width: 767px) {
 }
 /* End of New Portfolio css */
