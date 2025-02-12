@@ -57,7 +57,7 @@ $(document).ready(function () {
 
   // Apply 'page1' filter after a short delay to ensure 'all' is active first
   setTimeout(function () {
-    filterizd.filterizr("filter", "page1");
+    filterizd.filterizr("filter", "video");
   }, 5000);
 
   $(".filterListItem").on("click", function () {
@@ -65,8 +65,6 @@ $(document).ready(function () {
     $(this).addClass("active");
   });
 });
-
-// awan.js
 
 // Fungsi untuk memperbarui gambar
 function updateImages() {

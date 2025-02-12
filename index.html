@@ -174,10 +174,15 @@
         });
         $("#portfolio").load("pages/portfolio/index.html", function () {
           updateImages();
-          lightGallery(document.getElementById("gallery-mixed-content-demo"), {
+          lightGallery(document.getElementById("gallery-mixed-content"), {
             selector: ".gallery-item",
             thumbnail: true,
             zoom: true,
+            mobileSettings: {
+              controls: true,
+              showCloseIcon: true,
+              download: false,
+            },
             plugins: [lgZoom, lgThumbnail, lgVideo], // Make sure the plugins are listed here
           });
         });
