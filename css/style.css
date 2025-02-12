@@ -318,10 +318,10 @@ body {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
   margin: 15px;
 }
-@media (max-width: 576px) {
-  #portfolio {
-    text-align: center;
-  }
+#portfolio .row-center {
+  text-align: center;
+}
+@media (max-width: 767px) {
 }
 /* End of New Portfolio css */
 
