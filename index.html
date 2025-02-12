@@ -29,7 +29,6 @@
       }
     </script>
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
@@ -66,12 +65,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.css"
-    />
-
     <!-- end of lightGallery CSS -->
 
     <link
@@ -89,6 +82,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
   </head>
   <body data-target="#page-top" data-spy="scroll">
     <!-- Navbar -->
@@ -174,17 +168,6 @@
         });
         $("#portfolio").load("pages/portfolio/index.html", function () {
           updateImages();
-          lightGallery(document.getElementById("gallery-mixed-content"), {
-            selector: ".gallery-item",
-            thumbnail: true,
-            zoom: true,
-            mobileSettings: {
-              controls: true,
-              showCloseIcon: true,
-              download: false,
-            },
-            plugins: [lgZoom, lgThumbnail, lgVideo], // Make sure the plugins are listed here
-          });
         });
 
         $("#footer").load("pages/footer/index.html", function () {

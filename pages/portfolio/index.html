@@ -13,60 +13,57 @@
 </div>
 
 <div class="container">
-  <div class="row row-center">
+  <div
+    class="filtr-container gallery-container row justify-content"
+    id="gallery-mixed-content"
+  >
+    <!-- video -->
     <div
-      class="filtr-container gallery-container row justify-content"
-      id="gallery-mixed-content"
-    >
-      <!-- Page 1 -->
-      <div
-        class="filtr-item thumbnail col-12 col-md-3"
-        data-category="all,video"
-      >
-        <a
-          data-lg-size="1280-720"
-          class="gallery-item"
-          data-iframe="true"
-          data-src="https://drive.google.com/file/d/1w-_EMx574wp2Xl95bnpK7M57BKzQs6Ru/preview"
-          data-sub-html="<h4>Puffin Hunts Fish To Feed Puffling | Blue Planet II | BBC Earth</h4><p>On the heels of Planet Earth II's record-breaking Emmy nominations, BBC America presents stunning visual soundscapes from the series' amazing habitats.</p>"
-        >
-          <!-- thumbnail -->
-          <img
-            alt="Video ITT Bike."
-            class="img-responsive border-box-shadow"
-            src="https://drive.google.com/thumbnail?id=1tbOFFC8leoZWLSx8hEp9DUGkL6_Fg0S9&auto=format&fit=crop&w=240&q=80"
-          />
-        </a>
-      </div>
-      <!-- Page 2 -->
-      <div
-        class="col-md-6 col-lg-4 offset-lg-0 filtr-item thumbnail"
-        data-category="all,image"
-      >
-        <a
-          data-lg-size="1600-1067"
-          class="gallery-item"
-          data-src="https://drive.google.com/thumbnail?id=1D6WlzPftgAGTpJYrmwwJMyZ4uOsdDx3G&sz=s1080"
-          data-sub-html="<h4>UI - Aplikasi UMKM Cirebon</h4><p> Gak tau mau di isi apa lagi.</p>"
-        >
-          <!-- thumbnail -->
-          <img
-            alt="layers of blue."
-            class="img-responsive border-box-shadow"
-            src="https://drive.google.com/thumbnail?id=1Aq9UyEyE8kwdZKkqExgdoQU6IQJ3uMiU&auto=format&fit=crop&w=240&q=80"
-          />
-        </a>
-      </div>
-    </div>
+      id="video"
+      class="filtr-item thumbnail"
+      data-category="all,video"
+    ></div>
+    <!-- image -->
+    <div
+      id="image"
+      class="filtr-item thumbnail"
+      data-category="all,image"
+    ></div>
   </div>
+
+  <!-- Short Button -->
+  <div
+    class="col-md-12 d-flex flex-wrap justify-content-between galleryFilters"
+  >
+    <ul class="list-inline filterList">
+      <li class="btn filterListItem violetBtn" data-filter="video">Videos</li>
+      <li class="btn filterListItem violetBtn" data-filter="image">Images</li>
+      <li class="btn filterListItem violetBtn" data-filter="all">SHOW ALL</li>
+    </ul>
+    <p>⚠️ If image is not showing properly please refresh page</p>
+  </div>
+  <!-- end Short Button -->
 </div>
-<!-- Short Button -->
-<div class="col-md-12 d-flex flex-wrap justify-content-between galleryFilters">
-  <ul class="list-inline filterList">
-    <li class="btn filterListItem violetBtn" data-filter="video">Videos</li>
-    <li class="btn filterListItem violetBtn" data-filter="image">Images</li>
-    <li class="btn filterListItem violetBtn" data-filter="all">SHOW ALL</li>
-  </ul>
-  <p>⚠️ If image is not showing properly please refresh page</p>
-</div>
-<!-- end Short Button -->
+
+<script>
+  function loadGallery(type, selector) {
+    $("#" + type).load("pages/portfolio/" + type + ".html", function () {
+      updateImages();
+      lightGallery(document.getElementById("gallery-mixed-content"), {
+        selector: selector,
+        thumbnail: true,
+        zoom: true,
+        mobileSettings: {
+          controls: true,
+          showCloseIcon: true,
+          download: false,
+        },
+        plugins: [lgZoom, lgThumbnail, lgVideo], // Make sure the plugins are listed here
+      });
+    });
+  }
+
+  // Load gallerytipe
+  loadGallery("video", ".gallery-video");
+  loadGallery("image", ".gallery-image");
+</script>
