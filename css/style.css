@@ -315,9 +315,14 @@ body {
   max-width: 100%;
   border-radius: 5px;
   box-sizing: border-box;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   margin: 15px;
 }
+#portfolio .border-box-shadow:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 10px rgba(87, 87, 87, 0.6);
+}
+
 #portfolio .row-center {
   text-align: center;
 }
