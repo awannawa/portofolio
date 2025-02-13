@@ -13,24 +13,88 @@
 </div>
 
 <div class="container">
-  <div
-    class="filtr-container gallery-container row justify-content"
-    id="gallery-mixed-content"
-  >
+  <div class="justify-content-center" id="gallery-mixed-content">
     <!-- video -->
-    <div
-      id="video"
-      class="filtr-item thumbnail"
-      data-category="all,video"
-    ></div>
-    <!-- image -->
-    <div
-      id="image"
-      class="filtr-item thumbnail"
-      data-category="all,image"
-    ></div>
-  </div>
+    <div class="filtr-container galleryContainer">
+      <!-- video -->
 
+      <a
+        data-lg-size="1280-720"
+        class="gallery-item"
+        data-iframe="true"
+        data-src="https://drive.google.com/file/d/1YnEzdoAnie8KeE26v2U7d_2ni2f-Uej8/preview"
+        data-sub-html="<h4>Drop Cute | built with: Adobe Ilustrator</h4><p>Menggunakan beberapa tools terkait dengan easing dkk.</p>"
+      >
+        <!-- thumbnail -->
+        <img
+          alt="Drop Cute."
+          class="img-responsive border-box-shadow filtr-item"
+          data-category="all,video"
+          src="https://drive.google.com/thumbnail?id=1nAf479f0921fDirQZED49kLW8l6OMduh&auto=format&fit=crop&w=240&q=80"
+        />
+      </a>
+      <a
+        data-lg-size="1080-1080"
+        class="gallery-item"
+        data-iframe="true"
+        data-src="https://drive.google.com/file/d/1w-_EMx574wp2Xl95bnpK7M57BKzQs6Ru/preview"
+        data-sub-html="<h4>Sepeda Time Trial | built with: Adobe Ilustrator</h4><p>Menggunakan tools puppertter untuk pergerakan kaki dan rotasi dibannya.</p>"
+      >
+        <!-- thumbnail -->
+        <img
+          alt="Video ITT Bike."
+          class="img-responsive border-box-shadow filtr-item"
+          data-category="all,video"
+          src="https://drive.google.com/thumbnail?id=1tbOFFC8leoZWLSx8hEp9DUGkL6_Fg0S9&auto=format&fit=crop&w=240&q=80"
+        />
+      </a>
+      <a
+        data-lg-size="1280-720"
+        class="gallery-item"
+        data-iframe="true"
+        data-src="https://drive.google.com/file/d/1w-_EMx574wp2Xl95bnpK7M57BKzQs6Ru/preview"
+        data-sub-html="<h4>Video Profile | built with: Adobe Ilustrator</h4><p>Menggunakan tools puppertter untuk pergerakan kaki dan rotasi dibannya.</p>"
+      >
+        <!-- thumbnail -->
+        <img
+          alt="Video Profile."
+          class="img-responsive border-box-shadow filtr-item"
+          data-category="all,video"
+          src="https://drive.google.com/thumbnail?id=12k4-lzRh1ZDlpL-tAOnZQqTTJW4CMBvM&auto=format&fit=crop&w=240&q=80"
+        />
+      </a>
+
+      <!-- image -->
+
+      <!-- image 1 -->
+      <a
+        class="gallery-item"
+        data-src="https://drive.google.com/thumbnail?id=1D6WlzPftgAGTpJYrmwwJMyZ4uOsdDx3G&sz=s1080"
+        data-sub-html="<h4>UI - Aplikasi UMKM Cirebon</h4><p> Gak tau mau di isi apa lagi.</p>"
+      >
+        <!-- thumbnail -->
+        <img
+          alt="layers of blue."
+          class="img-responsive border-box-shadow filtr-item"
+          data-category="all,image"
+          src="https://drive.google.com/thumbnail?id=1Aq9UyEyE8kwdZKkqExgdoQU6IQJ3uMiU&auto=format&fit=crop&w=240&q=80"
+        />
+      </a>
+      <a
+        class="gallery-item"
+        data-src="https://drive.google.com/thumbnail?id=16aZYiKe8ORNcVmxV9CzNvNvY_BDGw8Kr&sz=s1080"
+        data-sub-html="<h4>Flashcard</h4><p> Gak tau mau di isi apa lagi.</p>"
+      >
+        <!-- thumbnail -->
+        <img
+          alt="layers of blue."
+          class="img-responsive border-box-shadow filtr-item"
+          data-category="all,image"
+          src="https://drive.google.com/thumbnail?id=1wlZBgz8-lU_whvEv_CscQaXrZdi-WWLQ&auto=format&fit=crop&w=240&q=80"
+        />
+      </a>
+    </div>
+  </div>
   <!-- Short Button -->
   <div
     class="col-md-12 d-flex flex-wrap justify-content-between galleryFilters"
@@ -44,26 +108,16 @@
   </div>
   <!-- end Short Button -->
 </div>
-
 <script>
-  function loadGallery(type, selector) {
-    $("#" + type).load("pages/portfolio/" + type + ".html", function () {
-      updateImages();
-      lightGallery(document.getElementById("gallery-mixed-content"), {
-        selector: selector,
-        thumbnail: true,
-        zoom: true,
-        mobileSettings: {
-          controls: true,
-          showCloseIcon: true,
-          download: false,
-        },
-        plugins: [lgZoom, lgThumbnail, lgVideo], // Make sure the plugins are listed here
-      });
-    });
-  }
-
-  // Load gallerytipe
-  loadGallery("video", ".gallery-video");
-  loadGallery("image", ".gallery-image");
+  lightGallery(document.getElementById("gallery-mixed-content"), {
+    selector: ".gallery-item",
+    thumbnail: true,
+    zoom: true,
+    mobileSettings: {
+      controls: true,
+      showCloseIcon: true,
+      download: false,
+    },
+    plugins: [lgZoom, lgThumbnail, lgVideo], // Make sure the plugins are listed here
+  });
 </script>
