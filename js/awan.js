@@ -1,17 +1,3 @@
-/*hamburger*/
-$(document).ready(function () {
-  $(".first-button").on("click", function () {
-    $(".animated-icon1").toggleClass("open");
-  });
-  $(".second-button").on("click", function () {
-    $(".animated-icon2").toggleClass("open");
-  });
-  $(".third-button").on("click", function () {
-    $(".animated-icon3").toggleClass("open");
-  });
-});
-/*hamburger*/
-
 /*Scroll ilang*/
 $(function () {
   var documentEl = $(document),
@@ -49,24 +35,22 @@ $(".page-scroll").on("click", function (e) {
 /*END smoth scroll*/
 
 //filterizr call
-$(document).ready(function () {
-  // Initialize Filterizr with no filter applied
-  var filterizd = $(".filtr-container").filterizr({
-    filter: "all",
-  });
+// $(document).ready(function () {
+//   // Initialize Filterizr with no filter applied
+//   var filterizd = $(".filtr-container").filterizr({
+//     filter: "all",
+//   });
 
-  // Apply 'page1' filter after a short delay to ensure 'all' is active first
-  setTimeout(function () {
-    filterizd.filterizr("filter", "page1");
-  }, 5000);
+//   // Apply 'page1' filter after a short delay to ensure 'all' is active first
+//   setTimeout(function () {
+//     filterizd.filterizr("filter", "video");
+//   }, 5000);
 
-  $(".filterListItem").on("click", function () {
-    $(".filterListItem").removeClass("active");
-    $(this).addClass("active");
-  });
-});
-
-// awan.js
+//   $(".filterListItem").on("click", function () {
+//     $(".filterListItem").removeClass("active");
+//     $(this).addClass("active");
+//   });
+// });
 
 // Fungsi untuk memperbarui gambar
 function updateImages() {
@@ -79,3 +63,13 @@ function updateImages() {
 
 // Event listener untuk memanggil fungsi updateImages saat window load
 window.addEventListener("load", updateImages);
+
+// //Fungsi untuk lightgallery
+// document.addEventListener("DOMContentLoaded", function () {
+//   lightGallery(document.getElementById("animated-thumbnails-gallery"), {
+//     selector: ".gallery-item",
+//     thumbnail: true, // Enable thumbnail support
+//     zoom: true, // Enable zoom feature
+//     plugins: [lgZoom, lgThumbnail], // Make sure the plugins are listed here
+//   });
+// });

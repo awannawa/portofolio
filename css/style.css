@@ -301,6 +301,38 @@ body {
   border-radius: 5px;
 }
 
+/* New Portfolio css */
+#portfolio .jumbotron {
+  text-align: center;
+}
+.lg-thumb-item.active {
+  border-color: green !important;
+}
+.lg-thumb-item:hover {
+  border-color: rgb(251, 255, 0, 0.6) !important;
+}
+#portfolio .border-box-shadow {
+  max-width: 100%;
+  border-radius: 5px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  margin: 15px;
+}
+#portfolio .border-box-shadow:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 10px rgba(87, 87, 87, 0.6);
+}
+
+#portfolio .row-center {
+  text-align: center;
+}
+#portfolio .container {
+  text-align: center;
+}
+@media (max-width: 767px) {
+}
+/* End of New Portfolio css */
+
 #footer .social ul li {
   display: inline-block;
 }
