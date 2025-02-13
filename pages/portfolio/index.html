@@ -15,12 +15,13 @@
 <div class="container">
   <div class="justify-content-center" id="gallery-mixed-content">
     <!-- video -->
-    <div class="filtr-container galleryContainer">
+    <div class="row filtr-container galleryContainer">
       <!-- video -->
 
       <a
         data-lg-size="1280-720"
-        class="gallery-item"
+        class="gallery-item filtr-item"
+        data-category="all,video"
         data-iframe="true"
         data-src="https://drive.google.com/file/d/1YnEzdoAnie8KeE26v2U7d_2ni2f-Uej8/preview"
         data-sub-html="<h4>Drop Cute | built with: Adobe Ilustrator</h4><p>Menggunakan beberapa tools terkait dengan easing dkk.</p>"
@@ -28,14 +29,14 @@
         <!-- thumbnail -->
         <img
           alt="Drop Cute."
-          class="img-responsive border-box-shadow filtr-item"
-          data-category="all,video"
+          class="img-responsive border-box-shadow"
           src="https://drive.google.com/thumbnail?id=1nAf479f0921fDirQZED49kLW8l6OMduh&auto=format&fit=crop&w=240&q=80"
         />
       </a>
       <a
         data-lg-size="1080-1080"
-        class="gallery-item"
+        class="gallery-item filtr-item"
+        data-category="all,video"
         data-iframe="true"
         data-src="https://drive.google.com/file/d/1w-_EMx574wp2Xl95bnpK7M57BKzQs6Ru/preview"
         data-sub-html="<h4>Sepeda Time Trial | built with: Adobe Ilustrator</h4><p>Menggunakan tools puppertter untuk pergerakan kaki dan rotasi dibannya.</p>"
@@ -43,14 +44,14 @@
         <!-- thumbnail -->
         <img
           alt="Video ITT Bike."
-          class="img-responsive border-box-shadow filtr-item"
-          data-category="all,video"
+          class="img-responsive border-box-shadow"
           src="https://drive.google.com/thumbnail?id=1tbOFFC8leoZWLSx8hEp9DUGkL6_Fg0S9&auto=format&fit=crop&w=240&q=80"
         />
       </a>
       <a
         data-lg-size="1280-720"
-        class="gallery-item"
+        class="gallery-item filtr-item"
+        data-category="all,video"
         data-iframe="true"
         data-src="https://drive.google.com/file/d/1w-_EMx574wp2Xl95bnpK7M57BKzQs6Ru/preview"
         data-sub-html="<h4>Video Profile | built with: Adobe Ilustrator</h4><p>Menggunakan tools puppertter untuk pergerakan kaki dan rotasi dibannya.</p>"
@@ -58,8 +59,7 @@
         <!-- thumbnail -->
         <img
           alt="Video Profile."
-          class="img-responsive border-box-shadow filtr-item"
-          data-category="all,video"
+          class="img-responsive border-box-shadow"
           src="https://drive.google.com/thumbnail?id=12k4-lzRh1ZDlpL-tAOnZQqTTJW4CMBvM&auto=format&fit=crop&w=240&q=80"
         />
       </a>
@@ -68,28 +68,28 @@
 
       <!-- image 1 -->
       <a
-        class="gallery-item"
+        class="gallery-item filtr-item"
+        data-category="all,image"
         data-src="https://drive.google.com/thumbnail?id=1D6WlzPftgAGTpJYrmwwJMyZ4uOsdDx3G&sz=s1080"
         data-sub-html="<h4>UI - Aplikasi UMKM Cirebon</h4><p> Gak tau mau di isi apa lagi.</p>"
       >
         <!-- thumbnail -->
         <img
           alt="layers of blue."
-          class="img-responsive border-box-shadow filtr-item"
-          data-category="all,image"
+          class="img-responsive border-box-shadow"
           src="https://drive.google.com/thumbnail?id=1Aq9UyEyE8kwdZKkqExgdoQU6IQJ3uMiU&auto=format&fit=crop&w=240&q=80"
         />
       </a>
       <a
-        class="gallery-item"
+        class="gallery-item filtr-item"
+        data-category="all,image"
         data-src="https://drive.google.com/thumbnail?id=16aZYiKe8ORNcVmxV9CzNvNvY_BDGw8Kr&sz=s1080"
         data-sub-html="<h4>Flashcard</h4><p> Gak tau mau di isi apa lagi.</p>"
       >
         <!-- thumbnail -->
         <img
           alt="layers of blue."
-          class="img-responsive border-box-shadow filtr-item"
-          data-category="all,image"
+          class="img-responsive border-box-shadow"
           src="https://drive.google.com/thumbnail?id=1wlZBgz8-lU_whvEv_CscQaXrZdi-WWLQ&auto=format&fit=crop&w=240&q=80"
         />
       </a>
@@ -119,5 +119,18 @@
       download: false,
     },
     plugins: [lgZoom, lgThumbnail, lgVideo], // Make sure the plugins are listed here
+  });
+  var filterizd = $(".filtr-container").filterizr({
+    filter: "all",
+  });
+
+  // Apply 'page1' filter after a short delay to ensure 'all' is active first
+  setTimeout(function () {
+    filterizd.filterizr("filter", "video");
+  }, 5000);
+
+  $(".filterListItem").on("click", function () {
+    $(".filterListItem").removeClass("active");
+    $(this).addClass("active");
   });
 </script>
