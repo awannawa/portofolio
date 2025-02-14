@@ -329,7 +329,10 @@ body {
 #portfolio .container {
   text-align: center;
 }
-@media (max-width: 767px) {
+@media (max-width: 576px) {
+  #portfolio .border-box-shadow {
+    padding: 2rem;
+  }
 }
 /* End of New Portfolio css */
 

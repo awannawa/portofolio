@@ -12,15 +12,16 @@ fetch(
       anchor.classList.add(
         "gallery-item",
         "filtr-item",
-        "col-lg-2",
+        "col-lg-3",
         "col-md-6",
         "col-sm-12"
       );
       anchor.setAttribute("data-category", item.media_type);
-      anchor.setAttribute(
-        "data-iframe",
-        item.media_type === "video" ? "true" : "false"
-      );
+      if (item.media_type === "video") {
+        anchor.setAttribute("data-iframe", "true");
+      } else {
+        anchor.removeAttribute("data-iframe");
+      }
       anchor.setAttribute("data-src", item.link_media);
       anchor.setAttribute("data-sub-html", item.keterangan);
 
