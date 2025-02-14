@@ -30,7 +30,12 @@ fetch(
       img.classList.add("img-responsive", "border-box-shadow");
       img.setAttribute("src", item.link_thumbnail);
 
+      const span = document.createElement("span");
+      span.classList.add("item-desc");
+      span.textContent = item.media_type;
+
       anchor.appendChild(img);
+      anchor.appendChild(span);
       container.appendChild(anchor);
     });
 
