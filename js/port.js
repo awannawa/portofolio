@@ -1,10 +1,8 @@
 var loading = document.getElementById("loading"); // Loading spinner element
 
-// loading.style.display = "flex";
-
 fetch(
   "https://script.googleusercontent.com/macros/echo?user_content_key=dX-__99YMm0TkGVmkiS55CPRRVRJPPu3qnMvgHo1-Ivv3gxMm_khBAlnbZiMmLiRzvS7gKq3Ato63nJDqhz62I-E6T-D7DScm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnOliM8oaR4zVbh_ANpuBJ5PXCdYFJDymHhHTpgcLZwARXPZvanHgFmZhD3icWRjzV5b5diqMKQi_t4KvObAYKF8ghX1EaRsG_g&lib=MDXO39r6rQqhojnhGApfwNG9v2Zxi0IEI"
-) // Ganti dengan link JSON yang benar
+)
   .then((response) => response.json())
   .then((data) => {
     const container = document.getElementById("gallery");
@@ -69,6 +67,12 @@ fetch(
   .catch((error) => {
     console.error("Error fetching data:", error);
     loading.style.display = "none";
+    let errorMessage = document.createElement("p");
+    errorMessage.innerHTML =
+      'Error fetching data. Please refresh page. If content does not load again, please <a href="https://wa.me/6285161601550">contact me</a>.';
+    errorMessage.style.color = "red";
+    errorMessage.style.paddingTop = "2rem";
+    document.getElementById("gallery").appendChild(errorMessage);
   });
 
 // Event listener untuk tombol filter
