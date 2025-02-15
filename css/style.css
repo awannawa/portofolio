@@ -293,12 +293,27 @@ body {
 #portfolio .galleryContainer .item-desc {
   position: absolute;
   top: 1.2rem;
-  right: 3.5rem;
+  left: 50%;
+  transform: translateX(-50%);
   display: inline-block;
   color: #ffffff;
   background-color: #6c757d;
   padding: 5px 10px;
   border-radius: 5px;
+}
+
+#portfolio .galleryContainer .item-desc2 {
+  position: absolute;
+  top: 65%;
+  left: 52%;
+  transform: translateX(-50%);
+  display: inline-block;
+  color: #000000;
+  padding: 2px 0px;
+  border-radius: 5px;
+  width: 90%;
+  font-size: 0.7rem;
+  background-color: rgb(129, 129, 129, 0.2);
 }
 
 /* New Portfolio css */
@@ -317,6 +332,7 @@ body {
   box-sizing: border-box;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   margin: 15px;
+  padding: 2rem;
 }
 #portfolio .border-box-shadow:hover {
   cursor: pointer;
@@ -335,15 +351,16 @@ body {
 #portfolio .loading-container img {
   padding-bottom: 1rem;
 }
+
 @media (max-width: 576px) {
   #portfolio .border-box-shadow {
-    padding: 2rem;
+    padding: 3rem;
   }
 
-  #portfolio .galleryContainer .item-desc {
-    right: 2.7rem;
-    top: 1.7rem;
-  }
+  /* #portfolio .galleryContainer .item-desc {
+    right: 40%;
+    transform: 0 !important;
+  } */
 }
 /* End of New Portfolio css */
 
