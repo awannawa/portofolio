@@ -329,6 +329,12 @@ body {
 #portfolio .container {
   text-align: center;
 }
+#portfolio .loading-container {
+  padding: 2rem;
+}
+#portfolio .loading-container img {
+  padding-bottom: 1rem;
+}
 @media (max-width: 576px) {
   #portfolio .border-box-shadow {
     padding: 2rem;
