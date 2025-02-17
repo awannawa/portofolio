@@ -19,7 +19,7 @@ fetch(
           "col-sm-12"
         );
         anchor.setAttribute("data-category", item.media_type);
-        if (item.media_type === "video") {
+        if (item.media_type === "Video") {
           anchor.setAttribute("data-iframe", "true");
           anchor.setAttribute(
             "data-src",
@@ -75,9 +75,9 @@ fetch(
     // Inisialisasi Filterizr setelah elemen dimuat
     var filterizd = $(".filtr-container").filterizr({ filter: "all" });
 
-    // Terapkan filter "video" setelah delay
+    // Terapkan filter "Video" setelah delay
     setTimeout(() => {
-      filterizd.filterizr("filter", "video");
+      filterizd.filterizr("filter", "Video");
     }, 5000);
   })
   .then(() => {
