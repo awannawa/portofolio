@@ -47,6 +47,7 @@ fetch(
         const span = document.createElement("span");
         span.classList.add("item-desc");
         span.textContent = item.media_type;
+        span.innerHTML = "<b>" + item.media_type + "</b>";
 
         const span2 = document.createElement("span");
         span2.classList.add("item-desc2");
