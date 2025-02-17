@@ -41,7 +41,9 @@ fetch(
         img.classList.add("img-responsive", "border-box-shadow");
         img.setAttribute(
           "src",
-          "https://lh3.googleusercontent.com/d/" + item.id_thumbnail + "=s200"
+          "https://lh3.googleusercontent.com/d/" +
+            item.id_thumbnail +
+            "=s512-rw"
         );
 
         const span = document.createElement("span");
@@ -53,12 +55,7 @@ fetch(
         span2.classList.add("item-desc2");
         // span2.textContent = item.nama;
         span2.innerHTML =
-          "<b>" +
-          item.nama +
-          "</b>" +
-          "<br /> <i>Update : " +
-          item.date +
-          "</i>";
+          "<b>" + item.nama + "</b> <br /> <i>Update : " + item.date + "</i>";
 
         anchor.appendChild(img);
         anchor.appendChild(span);
