@@ -298,6 +298,7 @@ body {
   right: 4%;
   height: 20%;
   display: flex;
+  flex-direction: column;
   align-items: center; /* Vertically align text to center */
   justify-content: center;
   color: #000000;

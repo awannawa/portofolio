@@ -46,12 +46,19 @@ fetch(
 
         const span = document.createElement("span");
         span.classList.add("item-desc");
-        span.textContent = item.media_type;
+        // span.textContent = item.media_type;
         span.innerHTML = "<b>" + item.media_type + "</b>";
 
         const span2 = document.createElement("span");
         span2.classList.add("item-desc2");
-        span2.textContent = item.nama;
+        // span2.textContent = item.nama;
+        span2.innerHTML =
+          "<b>" +
+          item.nama +
+          "</b>" +
+          "<br /> <i>Update : " +
+          item.date +
+          "</i>";
 
         anchor.appendChild(img);
         anchor.appendChild(span);
