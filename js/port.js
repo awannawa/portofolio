@@ -38,7 +38,7 @@ fetch(
       img.classList.add("img-responsive", "border-box-shadow");
       img.setAttribute(
         "src",
-        "https://lh3.googleusercontent.com/d/" + item.id_thumbnail + "=s128"
+        "https://lh3.googleusercontent.com/d/" + item.id_thumbnail + "=s200"
       );
 
       const span = document.createElement("span");
