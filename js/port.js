@@ -36,12 +36,6 @@ fetch(
       const img = document.createElement("img");
       img.setAttribute("alt", item.nama);
       img.classList.add("img-responsive", "border-box-shadow");
-      // img.setAttribute(
-      //   "src",
-      //   "https://drive.google.com/thumbnail?id=" +
-      //     item.id_thumbnail +
-      //     "&auto=format&fit=crop&w=128&q=80"
-      // );
       img.setAttribute(
         "src",
         "https://lh3.googleusercontent.com/d/" + item.id_thumbnail + "=s128"

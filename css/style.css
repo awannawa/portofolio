@@ -288,21 +288,28 @@ body {
   padding: 5px 10px;
   border-radius: 5px;
 }
+#portfolio .gallery-item {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+#portfolio .gallery-item img {
+  width: 100%;
+  height: auto;
+}
 
 #portfolio .galleryContainer .item-desc2 {
   position: absolute;
-  top: 65%;
-  left: 52%;
-  transform: translateX(-50%);
-  display: inline-block;
-  color: #000000;
-  padding: 2px 0px;
-  border-radius: 5px;
-  width: 90%;
-  font-size: 0.7rem;
-  background-color: rgb(129, 129, 129, 0.2);
+  top: 30%;
+  width: 92%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #000000; /* text color */
 }
-
 /* New Portfolio css */
 #portfolio .jumbotron {
   text-align: center;
@@ -318,8 +325,8 @@ body {
   border-radius: 5px;
   box-sizing: border-box;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  margin: 15px;
-  padding: 2rem;
+  margin: 1rem 0;
+  /*padding: 2rem; */
 }
 #portfolio .border-box-shadow:hover {
   cursor: pointer;
