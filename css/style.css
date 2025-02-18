@@ -368,7 +368,9 @@ body {
 #portfolio .page-number:hover {
   cursor: pointer;
 }
-
+#portfolio .gallery-item .item-desc2 {
+  font-size: 0.9em;
+}
 @media (max-width: 576px) {
   /* #portfolio .border-box-shadow {
     padding: 3rem;
