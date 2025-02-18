@@ -343,6 +343,9 @@ body {
 #portfolio .loading-container img {
   padding-bottom: 1rem;
 }
+#portfolio .container .dropdown {
+  text-align: right;
+}
 
 @media (max-width: 576px) {
   /* #portfolio .border-box-shadow {

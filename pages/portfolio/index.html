@@ -8,7 +8,51 @@
 </script>
 <h1 class="jumbotron text-white fw-bold">PORTOFOLIO</h1>
 <div class="container">
-  <div class="justify-content-center" id="gallery-mixed-content">
+  <!-- Filter dropdown -->
+  <div class="mt-3">
+    <div class="dropdown">
+      <button
+        class="dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        Filter Category
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <li>
+          <a
+            class="dropdown-item filterListItem"
+            data-filter="all"
+            onclick="setActiveFilter('All')"
+            >All</a
+          >
+        </li>
+        <li>
+          <a
+            class="dropdown-item filterListItem"
+            data-filter="Video"
+            onclick="setActiveFilter('Videos')"
+            >Videos</a
+          >
+        </li>
+        <li>
+          <a
+            class="dropdown-item filterListItem"
+            data-filter="Image"
+            onclick="setActiveFilter('Images')"
+            >Images</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div
+    class="justify-content-center"
+    id="gallery-mixed-content"
+    style="overflow: hidden"
+  >
     <div class="row filtr-container galleryContainer" id="gallery">
       <div id="loading" class="loading-container">
         <img src="img/loading.gif" alt="loading" />
@@ -18,10 +62,14 @@
     </div>
   </div>
 
+  <script>
+    function setActiveFilter(selected) {
+      document.getElementById("dropdownMenuButton").textContent = selected;
+    }
+  </script>
   <script type="text/javascript" src="js/port.js"></script>
 
-  <!-- Filter Buttons -->
-  <div
+  <!-- <div
     class="col-md-12 d-flex flex-wrap justify-content-between galleryFilters"
   >
     <ul class="list-inline filterList">
@@ -30,5 +78,5 @@
       <li class="btn filterListItem violetBtn" data-filter="all">SHOW ALL</li>
     </ul>
     <p>⚠️ If image is not showing properly please refresh page</p>
-  </div>
+  </div> -->
 </div>
