@@ -53,7 +53,7 @@ function loadItems(page) {
       const span2 = document.createElement("span");
       span2.classList.add("item-desc2");
       span2.innerHTML =
-        "<b>" + item.nama + "</b> <br /> <i>Update : " + item.date + "</i>";
+        "<b>" + item.nama + "</b>\n<i>Update : " + item.date + "</i>";
 
       anchor.appendChild(img);
       anchor.appendChild(span);
