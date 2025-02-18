@@ -346,7 +346,9 @@ body {
 #portfolio .container .dropdown {
   text-align: right;
 }
-
+#portfolio .next-prev-btn {
+  margin: 1rem 0;
+}
 @media (max-width: 576px) {
   /* #portfolio .border-box-shadow {
     padding: 3rem;

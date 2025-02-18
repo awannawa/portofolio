@@ -48,6 +48,8 @@
       </ul>
     </div>
   </div>
+  <!-- End of Filter dropdown -->
+
   <div
     class="justify-content-center"
     id="gallery-mixed-content"
@@ -61,22 +63,14 @@
       </div>
     </div>
   </div>
-
+  <div class="next-prev-btn">
+    <button id="prevPageButton" style="display: none">Previous</button>
+    <button id="nextPageButton">Next</button>
+  </div>
   <script>
     function setActiveFilter(selected) {
       document.getElementById("dropdownMenuButton").textContent = selected;
     }
   </script>
   <script type="text/javascript" src="js/port.js"></script>
-
-  <!-- <div
-    class="col-md-12 d-flex flex-wrap justify-content-between galleryFilters"
-  >
-    <ul class="list-inline filterList">
-      <li class="btn filterListItem violetBtn" data-filter="Video">Videos</li>
-      <li class="btn filterListItem violetBtn" data-filter="Image">Images</li>
-      <li class="btn filterListItem violetBtn" data-filter="all">SHOW ALL</li>
-    </ul>
-    <p>⚠️ If image is not showing properly please refresh page</p>
-  </div> -->
 </div>
