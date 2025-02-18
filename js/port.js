@@ -95,15 +95,40 @@ function loadItems(page) {
   // Inisialisasi Filterizr setelah elemen dimuat
   $(".filtr-container").filterizr({ filter: "all" });
 }
+
 function updatePageIndicator() {
   const pageIndicator = document.getElementById("pageIndicator");
   const totalPages = Math.ceil(allData.length / itemsPerPage);
   let pageNumbersHtml = "";
 
-  for (let i = 0; i < totalPages; i++) {
-    pageNumbersHtml += `<span class="page-number ${
-      i === currentPage ? "active" : ""
-    }" data-page="${i}">${i + 1}</span>`;
+  // Function to generate page numbers HTML
+  function generatePageNumbers(start, end) {
+    for (let i = start; i < end; i++) {
+      pageNumbersHtml += `<span class="page-number ${
+        i === currentPage ? "active" : ""
+      }" data-page="${i}">${i + 1}</span>`;
+    }
+  }
+
+  if (totalPages <= 6) {
+    // If total pages are 6 or less, show all page numbers
+    generatePageNumbers(0, totalPages);
+  } else {
+    // Display first 3 pages and last 3 pages
+    if (currentPage < 2) {
+      generatePageNumbers(0, 6);
+    } else if (currentPage >= 2 && currentPage < totalPages - 2) {
+      generatePageNumbers(0, 2);
+      pageNumbersHtml += "<span>...</span>";
+      generatePageNumbers(currentPage - 1, currentPage + 2);
+      pageNumbersHtml += "<span>...</span>";
+      generatePageNumbers(totalPages - 2, totalPages);
+    } else {
+      generatePageNumbers(0, 2);
+      pageNumbersHtml += "<span>...</span>";
+      generatePageNumbers(totalPages - 6, totalPages);
+    }
+    pageNumbersHtml += "<span>....</span>";
   }
 
   pageIndicator.innerHTML = pageNumbersHtml;
@@ -114,9 +139,20 @@ function updatePageIndicator() {
     pageNumber.addEventListener("click", (e) => {
       currentPage = parseInt(e.target.getAttribute("data-page"));
       loadItems(currentPage);
+      updatePageIndicator(); // Update the page indicator after changing the page
     });
   });
+
+  if (currentPage >= 2) {
+    const ellipses = document.querySelectorAll("#pageIndicator span");
+    ellipses.forEach((ellipsis) => {
+      if (ellipsis.textContent === "....") {
+        ellipsis.style.display = "none";
+      }
+    });
+  }
 }
+
 function fetchData() {
   loading.style.display = "block"; // Show loading spinner
   fetch(
