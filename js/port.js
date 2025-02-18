@@ -1,7 +1,7 @@
 var loading = document.getElementById("loading"); // Loading spinner element
 
 let currentPage = 0;
-const itemsPerPage = 25;
+const itemsPerPage = 10;
 let allData = [];
 
 function loadItems(page) {
@@ -63,6 +63,7 @@ function loadItems(page) {
   });
 
   const nextPageButton = document.getElementById("nextPageButton");
+  const pageIndicator = document.getElementById("pageIndicator");
   const prevPageButton = document.getElementById("prevPageButton");
   if (endIndex >= allData.length) {
     nextPageButton.style.display = "none";
@@ -75,6 +76,9 @@ function loadItems(page) {
   } else {
     prevPageButton.style.display = "block";
   }
+  // Update page number indicator
+  updatePageIndicator();
+
   // Inisialisasi LightGallery setelah elemen dimuat
   lightGallery(document.getElementById("gallery-mixed-content"), {
     selector: ".gallery-item",
@@ -89,14 +93,30 @@ function loadItems(page) {
   });
 
   // Inisialisasi Filterizr setelah elemen dimuat
-  var filterizd = $(".filtr-container").filterizr({ filter: "all" });
-
-  // Terapkan filter "Video" setelah delay
-  setTimeout(() => {
-    filterizd.filterizr("filter", "Video");
-  }, 5000);
+  $(".filtr-container").filterizr({ filter: "all" });
 }
+function updatePageIndicator() {
+  const pageIndicator = document.getElementById("pageIndicator");
+  const totalPages = Math.ceil(allData.length / itemsPerPage);
+  let pageNumbersHtml = "";
 
+  for (let i = 0; i < totalPages; i++) {
+    pageNumbersHtml += `<span class="page-number ${
+      i === currentPage ? "active" : ""
+    }" data-page="${i}">${i + 1}</span>`;
+  }
+
+  pageIndicator.innerHTML = pageNumbersHtml;
+
+  // Add click event listeners for page numbers
+  const pageNumbers = document.querySelectorAll(".page-number");
+  pageNumbers.forEach((pageNumber) => {
+    pageNumber.addEventListener("click", (e) => {
+      currentPage = parseInt(e.target.getAttribute("data-page"));
+      loadItems(currentPage);
+    });
+  });
+}
 function fetchData() {
   loading.style.display = "block"; // Show loading spinner
   fetch(
@@ -106,50 +126,8 @@ function fetchData() {
     .then((data) => {
       allData = data;
       loadItems(currentPage);
-
-      //   // Inisialisasi LightGallery setelah elemen dimuat
-      //   lightGallery(document.getElementById("gallery-mixed-content"), {
-      //     selector: ".gallery-item",
-      //     thumbnail: true,
-      //     zoom: true,
-      //     mobileSettings: {
-      //       controls: true,
-      //       showCloseIcon: true,
-      //       download: false,
-      //     },
-      //     plugins: [lgZoom, lgThumbnail, lgVideo],
-      //   });
-
-      //   // Inisialisasi Filterizr setelah elemen dimuat
-      //   var filterizd = $(".filtr-container").filterizr({ filter: "all" });
-
-      //   // Terapkan filter "Video" setelah delay
-      //   setTimeout(() => {
-      //     filterizd.filterizr("filter", "Video");
-      //   }, 5000);
     })
-    // .then(() => {
-    //   // Inisialisasi LightGallery setelah elemen dimuat
-    //   lightGallery(document.getElementById("gallery-mixed-content"), {
-    //     selector: ".gallery-item",
-    //     thumbnail: true,
-    //     zoom: true,
-    //     mobileSettings: {
-    //       controls: true,
-    //       showCloseIcon: true,
-    //       download: false,
-    //     },
-    //     plugins: [lgZoom, lgThumbnail, lgVideo],
-    //   });
 
-    //   // Inisialisasi Filterizr setelah elemen dimuat
-    //   var filterizd = $(".filtr-container").filterizr({ filter: "all" });
-
-    //   // Terapkan filter "Video" setelah delay
-    //   setTimeout(() => {
-    //     filterizd.filterizr("filter", "Video");
-    //   }, 5000);
-    // })
     .then(() => {
       // Hide loading spinner
       loading.style.display = "none";

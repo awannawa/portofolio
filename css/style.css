@@ -347,8 +347,28 @@ body {
   text-align: right;
 }
 #portfolio .next-prev-btn {
-  margin: 1rem 0;
+  margin: 1.5rem 0;
+  display: flex;
+  justify-content: center;
 }
+#portfolio #nextPageButton,
+#portfolio #prevPageButton {
+  margin: 0 1rem;
+}
+#portfolio .page-number {
+  margin-right: 5px;
+  border: 1px solid #0c0c0c;
+  padding: 2px;
+}
+#portfolio .page-number.active {
+  font-weight: bolder;
+  background-color: #eaeaea;
+  padding: 5px;
+}
+#portfolio .page-number:hover {
+  cursor: pointer;
+}
+
 @media (max-width: 576px) {
   /* #portfolio .border-box-shadow {
     padding: 3rem;
