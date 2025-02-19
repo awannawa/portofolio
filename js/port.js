@@ -13,7 +13,7 @@ function loadItems(page) {
   container.innerHTML = "";
 
   dataToShow.forEach((item) => {
-    if (item.nama !== "") {
+    if (item.media_type !== "") {
       const anchor = document.createElement("a");
       anchor.classList.add(
         "gallery-item",
