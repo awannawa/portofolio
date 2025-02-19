@@ -1,7 +1,7 @@
 var loading = document.getElementById("loading"); // Loading spinner element
 
 let currentPage = 0;
-const itemsPerPage = 10;
+const itemsPerPage = 12;
 let allData = [];
 
 function loadItems(page) {
