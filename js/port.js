@@ -25,6 +25,7 @@ function loadItems(page) {
       anchor.setAttribute("data-category", item.media_type);
       if (item.media_type === "Video") {
         anchor.setAttribute("data-iframe", "true");
+        anchor.setAttribute("autoplayVideoOnSlide", "true");
         anchor.setAttribute(
           "data-src",
           "https://drive.google.com/file/d/" + item.id_media + "/preview"
