@@ -45,3 +45,25 @@ function updateImages() {
 
 // Event listener untuk memanggil fungsi updateImages saat window load
 window.addEventListener("load", updateImages);
+
+$(document).ready(function () {
+  $("#nav").load("models/navbar/index.html");
+  $("#page-top").load("pages/biodatasingkat/index.html", function () {
+    updateImages();
+  });
+  $("#education").load("pages/education/index.html", function () {
+    updateImages();
+  });
+  $("#skill").load("pages/skill/index.html", function () {
+    updateImages();
+  });
+  $("#portfolio").load("pages/portfolio/index.html", function () {
+    updateImages();
+  });
+  $("#footer").load("pages/footer/index.html", function () {
+    updateImages();
+  });
+  $("#mySosMed").load("pages/sosmed/index.html", function () {
+    updateImages();
+  });
+});
