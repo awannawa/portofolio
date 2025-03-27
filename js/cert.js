@@ -155,12 +155,13 @@ function updatePageIndicator() {
 
 function fetchData() {
   loading.style.display = "block"; // Show loading spinner
-  fetch("https://script.google.com/macros/s/AKfycbwOqNnJvSBQazpQlFXoo9a_N2CqcNwzjXLgO3MeModMDNHp4HJG_LasoW0-lmcqdH2m/exec")
+  fetch("https://script.google.com/macros/s/AKfycbyFC0qXNponeJxWGxzc5tyTa_Gdg3JPkXARzqHgxOPHJ1RblvXYq-Djj-z2UeNr4Ge9/exec")
     .then((response) => response.json())
     .then((data) => {
       allData = data;
       loadItems(currentPage);
     })
+
     .then(() => {
       // Hide loading spinner
       loading.style.display = "none";
@@ -189,9 +190,3 @@ document.getElementById("prevPageButton").addEventListener("click", () => {
 
 // Call the fetchData function to start loading the items
 fetchData();
-
-// Event listener untuk tombol filter
-$(".filterListItem").on("click", function () {
-  $(".filterListItem").removeClass("active");
-  $(this).addClass("active");
-});
