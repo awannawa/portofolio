@@ -233,7 +233,18 @@ body {
   opacity: 1;
   background: rgb(0, 0, 0, 0.6);
 }
+/* section certificate */
+#certificate .jumbotron {
+  text-align: center;
+}
+#certificate .container-content{
+  margin-top: 1rem !important;
+}
+#certificate p {
+  text-align: center;
+}
 
+/* section portofolio */
 #portfolio .galleryFilters {
   margin: 20px auto;
   align-content: center;
