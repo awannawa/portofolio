@@ -1,192 +1,136 @@
-var loading = document.getElementById("loading"); // Loading spinner element
-
-let currentPage = 0;
-const itemsPerPage = 12;
-let allData = [];
-
-function loadItems(page) {
-  const startIndex = page * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
-  const dataToShow = allData.slice(startIndex, endIndex);
-
-  const container = document.getElementById("gallery");
-  container.innerHTML = "";
-
-  dataToShow.forEach((item) => {
-    if (item.media_type !== "") {
-      const anchor = document.createElement("a");
-      anchor.classList.add(
-        "gallery-item",
-        "filtr-item",
-        "col-lg-3",
-        "col-md-6",
-        "col-sm-12"
-      );
-      anchor.setAttribute("data-category", item.media_type);
-      if (item.media_type === "Video") {
-        anchor.setAttribute("data-iframe", "true");
-        anchor.setAttribute(
-          "data-src",
-          "https://drive.google.com/file/d/" + item.id_media + "/preview"
-        );
-      } else {
-        anchor.setAttribute(
-          "data-src",
-          "https://drive.google.com/thumbnail?id=" + item.id_media + "&sz=s1080"
-        );
-      }
-
-      anchor.setAttribute("data-sub-html", item.keterangan);
-
-      const img = document.createElement("img");
-      img.setAttribute("alt", item.nama);
-      img.classList.add("img-responsive", "border-box-shadow");
-      img.setAttribute(
-        "src",
-        "https://lh3.googleusercontent.com/d/" + item.id_thumbnail + "=s512-rw"
-      );
-
-      const span = document.createElement("span");
-      span.classList.add("item-desc");
-      span.innerHTML = "<b>" + item.media_type + "</b>";
-
-      const span2 = document.createElement("span");
-      span2.classList.add("item-desc2");
-      span2.innerHTML =
-        "<b>" + item.nama + "</b>\n<i>Update : " + item.date + "</i>";
-
-      anchor.appendChild(img);
-      anchor.appendChild(span);
-      anchor.appendChild(span2);
-      container.appendChild(anchor);
-    }
-  });
-
-  const nextPageButton = document.getElementById("nextPageButton");
-  const pageIndicator = document.getElementById("pageIndicator");
-  const prevPageButton = document.getElementById("prevPageButton");
-  if (endIndex >= allData.length) {
-    nextPageButton.style.display = "none";
-  } else {
-    nextPageButton.style.display = "block";
-  }
-
-  if (startIndex === 0) {
-    prevPageButton.style.display = "none";
-  } else {
-    prevPageButton.style.display = "block";
-  }
-  // Update page number indicator
-  updatePageIndicator();
-
-  // Inisialisasi LightGallery setelah elemen dimuat
-  lightGallery(document.getElementById("gallery-mixed-content"), {
-    selector: ".gallery-item",
-    thumbnail: true,
-    zoom: true,
-    mobileSettings: {
-      controls: true,
-      showCloseIcon: true,
-      download: false,
+// CONFIGURATION
+const CONFIG = {
+  apiEndpoint: 'https://script.google.com/macros/s/AKfycbyFC0qXNponeJxWGxzc5tyTa_Gdg3JPkXARzqHgxOPHJ1RblvXYq-Djj-z2UeNr4Ge9/exec',
+  slickSettings: {
+    desktop: {
+      slidesToShow: 3,
+      slidesToScroll: 1
     },
-    plugins: [lgZoom, lgThumbnail, lgVideo],
-  });
-
-  // Inisialisasi Filterizr setelah elemen dimuat
-  $(".filtr-container").filterizr({ filter: "all" });
-}
-
-function updatePageIndicator() {
-  const pageIndicator = document.getElementById("pageIndicator");
-  const totalPages = Math.ceil(allData.length / itemsPerPage);
-  let pageNumbersHtml = "";
-
-  // Function to generate page numbers HTML
-  function generatePageNumbers(start, end) {
-    for (let i = start; i < end; i++) {
-      pageNumbersHtml += `<span class="page-number ${
-        i === currentPage ? "active" : ""
-      }" data-page="${i}">${i + 1}</span>`;
-    }
-  }
-
-  if (totalPages <= 6) {
-    // If total pages are 6 or less, show all page numbers
-    generatePageNumbers(0, totalPages);
-  } else {
-    // Display first 3 pages and last 3 pages
-    if (currentPage < 2) {
-      generatePageNumbers(0, 6);
-    } else if (currentPage >= 2 && currentPage < totalPages - 2) {
-      generatePageNumbers(0, 2);
-      pageNumbersHtml += "<span>...</span>";
-      generatePageNumbers(currentPage - 1, currentPage + 2);
-      pageNumbersHtml += "<span>...</span>";
-      generatePageNumbers(totalPages - 2, totalPages);
-    } else {
-      generatePageNumbers(0, 2);
-      pageNumbersHtml += "<span>...</span>";
-      generatePageNumbers(totalPages - 6, totalPages);
-    }
-    pageNumbersHtml += "<span>....</span>";
-  }
-
-  pageIndicator.innerHTML = pageNumbersHtml;
-
-  // Add click event listeners for page numbers
-  const pageNumbers = document.querySelectorAll(".page-number");
-  pageNumbers.forEach((pageNumber) => {
-    pageNumber.addEventListener("click", (e) => {
-      currentPage = parseInt(e.target.getAttribute("data-page"));
-      loadItems(currentPage);
-      updatePageIndicator(); // Update the page indicator after changing the page
-    });
-  });
-
-  if (currentPage >= 2) {
-    const ellipses = document.querySelectorAll("#pageIndicator span");
-    ellipses.forEach((ellipsis) => {
-      if (ellipsis.textContent === "....") {
-        ellipsis.style.display = "none";
+    tablet: {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 2
       }
-    });
+    },
+    mobile: {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        centerMode: true,
+        centerPadding: "20px"
+      }
+    }
   }
-}
+};
 
-function fetchData() {
-  loading.style.display = "block"; // Show loading spinner
-  fetch("https://script.google.com/macros/s/AKfycbyFC0qXNponeJxWGxzc5tyTa_Gdg3JPkXARzqHgxOPHJ1RblvXYq-Djj-z2UeNr4Ge9/exec")
-    .then((response) => response.json())
-    .then((data) => {
-      allData = data;
-      loadItems(currentPage);
-    })
+// COMPONENTS
+const CertificateManager = {
+  init() {
+    this.cacheElements();
+    this.initEventListeners();
+    this.fetchData();
+  },
 
-    .then(() => {
-      // Hide loading spinner
-      loading.style.display = "none";
-    })
-    .catch((error) => {
-      console.error("Error fetching data:", error);
-      loading.style.display = "none";
-      let errorMessage = document.createElement("p");
-      errorMessage.innerHTML =
-        'Error fetching data. Please refresh the page. If the content does not load again, please <a href="https://wa.me/6285161601550">contact me</a>.';
-      errorMessage.style.color = "red";
-      errorMessage.style.paddingTop = "2rem";
-      document.getElementById("gallery").appendChild(errorMessage);
+  cacheElements() {
+    this.$gallery = $('#certificateGallery');
+    this.$loading = $('#loading');
+  },
+
+  initEventListeners() {
+    $(document).ajaxStart(() => this.showLoading());
+    $(document).ajaxStop(() => this.hideLoading());
+  },
+
+  async fetchData() {
+    try {
+      const response = await fetch(CONFIG.apiEndpoint);
+      const data = await response.json();
+      this.renderCertificates(data);
+      this.initCarousel();
+      this.initLightGallery();
+    } catch (error) {
+      this.handleError(error);
+    }
+  },
+
+  renderCertificates(certificates) {
+    const html = certificates.map(cert => `
+      <a href="https://drive.google.com/file/d/${cert.iframeUrl}/preview" 
+         class="cert-card" 
+         data-iframe="true"
+         data-lg-size="1280-720"
+         data-sub-html="<h4>${cert.title}</h4><p>${cert.description}</p>">
+        <img src="https://lh3.googleusercontent.com/d/${cert.thumbnail}=s512-rw" 
+             alt="${cert.title}">
+      </a>
+          `).join('');
+
+    this.$gallery.html(html);
+  },
+
+  initCarousel() {
+    if (this.slickInstance) {
+      this.$gallery.slick('unslick');
+    }
+
+    this.$gallery.slick({
+      ...CONFIG.slickSettings.desktop,
+      responsive: [
+        CONFIG.slickSettings.tablet,
+        CONFIG.slickSettings.mobile
+      ]
     });
-}
+  },
 
-document.getElementById("nextPageButton").addEventListener("click", () => {
-  currentPage++;
-  loadItems(currentPage);
+  initLightGallery() {
+    if (this.lightGalleryInstance) {
+      this.lightGalleryInstance.destroy();
+    }
+
+    this.lightGalleryInstance = lightGallery(this.$gallery[0], {
+      counter: false,
+      selector: '.cert-card',
+      plugins: [lgZoom],
+      preload: 3,
+      download: false
+    });
+  },
+
+  showLoading() {
+    this.$loading.fadeIn();
+  },
+
+  hideLoading() {
+    this.$loading.fadeOut();
+  },
+
+  handleError(error) {
+    console.error('Error:', error);
+    this.$gallery.html(`
+            <div class="error-message">
+              <h3>Error loading certificates</h3>
+              <p>Please try again later or contact support</p>
+            </div>
+          `);
+  }
+};
+
+// INITIALIZE
+$(document).ready(() => CertificateManager.init());
+
+// Prevent click event from firing when dragging
+let isDragging = false;
+$('.cert-slider').on('mousedown touchstart', function () {
+  isDragging = false;
 });
-
-document.getElementById("prevPageButton").addEventListener("click", () => {
-  currentPage--;
-  loadItems(currentPage);
+$('.cert-slider').on('mousemove touchmove', function () {
+  isDragging = true;
 });
-
-// Call the fetchData function to start loading the items
-fetchData();
+$('.cert-slider').on('click', '.cert-card', function (e) {
+  if (isDragging) {
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    return false;
+  }
+});
+//END Prevent click event from firing when dragging

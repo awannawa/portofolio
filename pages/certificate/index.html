@@ -6,79 +6,32 @@
     document.querySelector("base").setAttribute("href", "/certificate/");
   }
 </script>
-<!-- lightGallery CSS -->
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.8.1/css/lightgallery.min.css"
-  integrity="sha512-QMCloGTsG2vNSnHcsxYTapI6pFQNnUP6yNizuLL5Wh3ha6AraI6HrJ3ABBaw6SIUHqlSTPQDs/SydiR98oTeaQ=="
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer"
-/>
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.8.1/css/lg-zoom.min.css"
-  integrity="sha512-S/hU6dGSK3D7SRpCvRF/IEufIr6Ikgp5vDiJarhdeFGEnw36hWZ6gVBjnwBbzjA+NEP7D8Gdm+5LL1HEsyiB1w=="
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer"
-/>
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.8.1/css/lg-thumbnail.min.css"
-  integrity="sha512-rKuOh3xlF/027KUPuMok0ESsZ2zWPRzkniD3n5zZKCAtbiVkYw66DR4KtVAGf8dLPLr5DdyQs05BlSmEyXctkQ=="
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer"
-/>
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.8.1/css/lg-video.min.css"
-  integrity="sha512-89gDQOHnYjji90NPJ7+M5tgA/0E+fjL4KuSFhi6tjH6sZ54yUEogPMmOAgbI599fW1CtCyrsJbch8k/QzuoXzw=="
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer"
-/>
-<!-- end of lightGallery CSS -->
-<h1 class="jumbotron text-white fw-bold">CERTIFICATION</h1>
-<div class="aos-init" data-aos="fade-down">
-  <div class="container-content">
-    <p>
-      nanti disini isinya sertifikat dengan slide bar horizontal atau next
-      dengan tampil per 3 sertifikat, button next transparent
-    </p>
-  </div>
 
-  <!-- <div class="justify-content-center" id="gallery-mixed-content" style="overflow: hidden">
-    <div class="row filtr-container galleryContainer" id="gallery">
-        <div id="loading" class="loading-container" style="display: none">
-            <img src="img/loading.gif" alt="loading" />
-            <br />
-            Hang tight weare working, aka loading content...
-        </div>
-    </div>
-</div> -->
-  <!-- <script type="text/javascript" src="js/cert.js"></script> -->
-  <!-- lightGallery script -->
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.8.1/lightgallery.umd.min.js"
-    integrity="sha512-UexFzU0TQTsof5otQ8fWrqPtNY1ctVv3ZphalsV++TwPEIDXnEprY2Q11GLi4BVM+k0nFPy3CdMYrxR8bDfl4w=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  ></script>
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.8.1/plugins/thumbnail/lg-thumbnail.umd.min.js"
-    integrity="sha512-LSba/xXeuJPM4UOIjCD/+BHni4hA4YEhZ/2j10PioYCViZdDrUrPYAHuWDm247bpVj3DujAbeBseqkHbMUUzDA=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  ></script>
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.8.1/plugins/zoom/lg-zoom.umd.min.js"
-    integrity="sha512-kb+bFSTztWA/jCvJQJ+fQdvjsD1zUJ3FNVvhkZg4boL4DA2j8PytzjFFoXepCstLzW4fBX/mACT2d8yTmjGZSg=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  ></script>
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.8.1/plugins/video/lg-video.min.js"
-    integrity="sha512-rnKIttrtGarsGfM4oUQSn6vIWfYBB1duPFg4rOyxYnC8+AU9BWW5tq+En1uA4Yi1pYtl0xWmFg3Jejsmx3CYQw=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  ></script>
-  <!-- end of lightGallery script -->
+<!-- Slick Carousel CSS -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+/>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+/>
+
+<h1 class="jumbotron text-white fw-bold">CERTIFICATION</h1>
+
+<!-- LOADING OVERLAY -->
+<div id="loading" class="loading-container" style="display: none; text-align: center;">
+    <img src="img/loading.gif" alt="loading" />
+    <br />
+    Hang tight weare working, aka loading content...
 </div>
+
+<!-- MAIN CONTENT -->    
+<div class="container-cert">
+    <div class="cert-slider" id="certificateGallery"></div>
+</div>
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<script type="text/javascript" src="js/cert.js"></script>

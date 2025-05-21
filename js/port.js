@@ -23,6 +23,7 @@ function loadItems(page) {
         "col-sm-12"
       );
       anchor.setAttribute("data-category", item.media_type);
+
       if (item.media_type === "Video") {
         anchor.setAttribute("data-iframe", "true");
         anchor.setAttribute(
@@ -99,8 +100,8 @@ function loadItems(page) {
 function updatePageIndicator() {
   const pageIndicator = document.getElementById("pageIndicator");
   const totalPages = Math.ceil(allData.length / itemsPerPage);
+  
   let pageNumbersHtml = "";
-
   // Function to generate page numbers HTML
   function generatePageNumbers(start, end) {
     for (let i = start; i < end; i++) {
@@ -135,6 +136,7 @@ function updatePageIndicator() {
 
   // Add click event listeners for page numbers
   const pageNumbers = document.querySelectorAll(".page-number");
+
   pageNumbers.forEach((pageNumber) => {
     pageNumber.addEventListener("click", (e) => {
       currentPage = parseInt(e.target.getAttribute("data-page"));
