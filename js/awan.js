@@ -57,6 +57,9 @@ $(document).ready(function () {
   $("#skill").load("pages/skill/index.html", function () {
     updateImages();
   });
+  $("#certificate").load("pages/certificate/index.html", function () {
+    updateImages();
+  });
   $("#portfolio").load("pages/portfolio/index.html", function () {
     updateImages();
   });

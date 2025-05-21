@@ -1,0 +1,37 @@
+<!-- PRELOADS -->
+<base href="/" />
+<!-- Base URL untuk hosting github -->
+<script>
+  if (window.location.hostname === "awannawa.github.io") {
+    document.querySelector("base").setAttribute("href", "/certificate/");
+  }
+</script>
+
+<!-- Slick Carousel CSS -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+/>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+/>
+
+<h1 class="jumbotron text-white fw-bold">CERTIFICATION</h1>
+
+<!-- LOADING OVERLAY -->
+<div id="loading" class="loading-container" style="display: none; text-align: center;">
+    <img src="img/loading.gif" alt="loading" />
+    <br />
+    Hang tight weare working, aka loading content...
+</div>
+
+<!-- MAIN CONTENT -->    
+<div class="container-cert">
+    <div class="cert-slider" id="certificateGallery"></div>
+</div>
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<script type="text/javascript" src="js/cert.js"></script>
