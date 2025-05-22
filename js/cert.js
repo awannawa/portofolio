@@ -92,7 +92,13 @@ const CertificateManager = {
       selector: '.cert-card',
       plugins: [lgZoom],
       preload: 3,
-      download: false
+      download: false,
+      showCloseIcon: true,
+      mobileSettings: {
+        controls: true,
+        showCloseIcon: true,
+        download: false,
+      }
     });
   },
 
