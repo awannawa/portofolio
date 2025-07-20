@@ -772,8 +772,8 @@ a:focus,
 .nav-item .dropdown-item {
   text-align: right;
 } 
-
+/* jangan di idupin karena bikin dropdown filter gak muncul
 .dropdown-menu {
   right: 0 !important;
   left: auto !important;
-}
+} */
