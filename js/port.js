@@ -49,12 +49,20 @@ function loadItems(page) {
 
       const span = document.createElement("span");
       span.classList.add("item-desc");
-      span.innerHTML = "<b>" + item.media_type + "</b>";
+      const spanB = document.createElement("b");
+      spanB.textContent = item.media_type;
+      span.appendChild(spanB);
 
       const span2 = document.createElement("span");
       span2.classList.add("item-desc2");
-      span2.innerHTML =
-        "<b>" + item.nama + "</b>\n<i>Update : " + item.date + "</i>";
+      const span2B = document.createElement("b");
+      span2B.textContent = item.nama;
+      const span2Br = document.createElement("br");
+      const span2I = document.createElement("i");
+      span2I.textContent = "Update : " + item.date;
+      span2.appendChild(span2B);
+      span2.appendChild(span2Br);
+      span2.appendChild(span2I);
 
       anchor.appendChild(img);
       anchor.appendChild(span);
@@ -171,8 +179,12 @@ function fetchData() {
       console.error("Error fetching data:", error);
       loading.style.display = "none";
       let errorMessage = document.createElement("p");
-      errorMessage.innerHTML =
-        'Error fetching data. Please refresh the page. If the content does not load again, please <a href="https://wa.me/6285161601550">contact me</a>.';
+      errorMessage.textContent = 'Error fetching data. Please refresh the page. If the content does not load again, please ';
+      const contactLink = document.createElement("a");
+      contactLink.href = "https://wa.me/6285161601550";
+      contactLink.textContent = "contact me";
+      errorMessage.appendChild(contactLink);
+      errorMessage.appendChild(document.createTextNode('.'));
       errorMessage.style.color = "red";
       errorMessage.style.paddingTop = "2rem";
       document.getElementById("gallery").appendChild(errorMessage);

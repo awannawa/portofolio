@@ -1,3 +1,10 @@
+// SECURITY: Sanitize HTML to prevent XSS attacks
+function escapeHtml(text) {
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+
 // CONFIGURATION
 const CONFIG = {
   apiEndpoint: 'https://script.google.com/macros/s/AKfycbyFC0qXNponeJxWGxzc5tyTa_Gdg3JPkXARzqHgxOPHJ1RblvXYq-Djj-z2UeNr4Ge9/exec',
@@ -55,13 +62,13 @@ const CertificateManager = {
 
   renderCertificates(certificates) {
     const html = certificates.map(cert => `
-      <a href="https://drive.google.com/file/d/${cert.iframeUrl}/preview" 
+      <a href="https://drive.google.com/file/d/${escapeHtml(cert.iframeUrl)}/preview" 
          class="cert-card" 
          data-iframe="true"
          data-lg-size="1280-720"
-         data-sub-html="<h4>${cert.title}</h4><p>${cert.description}</p>">
-        <img src="https://lh3.googleusercontent.com/d/${cert.thumbnail}=s512-rw" 
-             alt="${cert.title}">
+         data-sub-html="<h4>${escapeHtml(cert.title)}</h4><p>${escapeHtml(cert.description)}</p>">
+        <img src="https://lh3.googleusercontent.com/d/${escapeHtml(cert.thumbnail)}=s512-rw" 
+             alt="${escapeHtml(cert.title)}">
       </a>
           `).join('');
 
